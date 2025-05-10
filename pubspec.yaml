@@ -1,0 +1,65 @@
+name: agrogeo_app_novo
+description: "A new Flutter project."
+publish_to: 'none' # Remove esta linha se desejar publicar no pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Ícones estilo iOS
+  cupertino_icons: ^1.0.6
+
+  # Firebase - Versões compatíveis
+  firebase_core: ^2.27.2
+  firebase_auth: ^4.17.9
+  cloud_firestore: ^4.15.9
+  firebase_storage: ^11.7.5
+  firebase_messaging: ^14.7.11
+
+  # Notificações locais (usado com FCM em foreground)
+  flutter_local_notifications: ^16.3.2
+
+  # Utilitários diversos
+  shared_preferences: ^2.2.3
+  url_launcher: ^6.2.6
+  file_picker: ^6.2.1
+  mask_text_input_formatter: ^2.9.0
+  intl: ^0.18.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+# Para mais detalhes sobre pubspec.yaml: https://dart.dev/tools/pub/pubspec
+
+flutter:
+
+  # Garante o uso de ícones padrão do Material Design
+  uses-material-design: true
+
+  # Adicione aqui os assets da aplicação
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/images/
+    - assets/audio/
+    - assets/pdfs/
+
+  # Fontes personalizadas (exemplo comentado)
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
