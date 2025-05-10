@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart'; // Para formatação de data
-// import 'package:agrogeo_brasil_app/screens/os_chat.dart'; // Comentado pois a navegação primária mudou
-import 'package:agrogeo_brasil_app/screens/os_detalhes_etapas_page.dart'; // IMPORT ADICIONADO
+// import 'package:agrogeo_app_novo/screens/os_chat.dart'; // Comentado pois a navegação primária mudou
+import 'package:agrogeo_app_novo/screens/os_detalhes_etapas_page.dart'; // IMPORT ADICIONADO
 
 class OrdensServicoDepartamentoPage extends StatefulWidget {
   final String nomeCliente;
@@ -374,34 +374,34 @@ class _OrdensServicoDepartamentoPageState
                                     fontWeight: FontWeight.w500),
                                 textAlign: TextAlign.left,
                                 overflow: TextOverflow.ellipsis,
-                                maxLines: 2,
+                                maxLines: 1, // Adicionado para evitar quebra de linha excessiva
                               ),
                               SizedBox(height: 4),
                               Text(
                                 'Data: $dataCriacaoFormatada',
                                 style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.white.withOpacity(0.9),
-                                ),
+                                    fontSize: 12, color: Colors.white70),
                               ),
                             ],
                           ),
                         ),
-                        Icon(Icons.arrow_forward_ios,
-                            color: Colors.white, size: 18),
+                        Icon(Icons.arrow_forward_ios, color: Colors.white, size: 16),
                       ],
                     ),
                   ),
                 );
-              }).toList();
+              }).toList(); // Convertendo o map para uma lista de widgets
 
               return Column(
                 children: [
                   header,
-                  Expanded(
-                    child: ListView(children: osButtons),
-                  ),
                   _buildLegend(),
+                  Expanded(
+                    child: ListView(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      children: osButtons,
+                    ),
+                  ),
                 ],
               );
             },
@@ -411,3 +411,4 @@ class _OrdensServicoDepartamentoPageState
     );
   }
 }
+
