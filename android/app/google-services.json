@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "587027889252",
+    "project_id": "agrogeo-brasil-app",
+    "storage_bucket": "agrogeo-brasil-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587027889252:android:afe3873651cf28c4de7371",
+        "android_client_info": {
+          "package_name": "br.com.agrogeo.agrogeo_brasil_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-NxqoEAHVSo8YA9ofPDBpSuVhUDKBAoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

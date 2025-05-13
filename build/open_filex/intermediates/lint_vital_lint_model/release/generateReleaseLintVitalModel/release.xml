@@ -1,0 +1,31 @@
+<variant
+    name="release"
+    package="com.crazecoder.openfile"
+    minSdkVersion="16"
+    targetSdkVersion="16"
+    mergedManifest="C:\agrogeo_brasil_app\build\open_filex\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml"
+    manifestMergeReport="C:\agrogeo_brasil_app\build\open_filex\outputs\logs\manifest-merger-release-report.txt"
+    proguardFiles="C:\agrogeo_brasil_app\build\open_filex\intermediates\default_proguard_files\global\proguard-android.txt-8.7.0"
+    partialResultsDir="C:\agrogeo_brasil_app\build\open_filex\intermediates\lint_vital_partial_results\release\lintVitalAnalyzeRelease\out">
+  <buildFeatures
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+    <sourceProvider
+        manifests="src\main\AndroidManifest.xml"
+        javaDirectories="src\main\java;src\release\java;src\main\kotlin;src\release\kotlin"
+        resDirectories="src\main\res;src\release\res"
+        assetsDirectories="src\main\assets;src\release\assets"/>
+  </sourceProviders>
+  <testSourceProviders>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <artifact
+      classOutputs="C:\agrogeo_brasil_app\build\open_filex\intermediates\javac\release\compileReleaseJavaWithJavac\classes;C:\agrogeo_brasil_app\build\open_filex\intermediates\compile_r_class_jar\release\generateReleaseRFile\R.jar"
+      type="MAIN"
+      applicationId="com.crazecoder.openfile"
+      generatedSourceFolders="C:\agrogeo_brasil_app\build\open_filex\generated\ap_generated_sources\release\out"
+      generatedResourceFolders="C:\agrogeo_brasil_app\build\open_filex\generated\res\resValues\release"
+      desugaredMethodsFiles="C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c205ee2f03940358ec9a2d2be9875fae\transformed\D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>

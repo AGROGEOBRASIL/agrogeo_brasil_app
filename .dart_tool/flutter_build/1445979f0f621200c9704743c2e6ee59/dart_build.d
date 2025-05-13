@@ -1,0 +1,1 @@
+ C:\\agrogeo_brasil_app\\.dart_tool\\flutter_build\\1445979f0f621200c9704743c2e6ee59\\dart_build_result.json: 

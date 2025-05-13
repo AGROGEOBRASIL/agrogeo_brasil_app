@@ -1,0 +1,7 @@
+#Tue May 13 18:05:44 BRT 2025
+base.1=C\:\\agrogeo_brasil_app\\build\\app\\intermediates\\desugar_lib_dex\\release\\l8DexDesugarLibRelease\\classes1000.dex
+path.1=classes1000.dex
+base.0=C\:\\agrogeo_brasil_app\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
