@@ -1,0 +1,2 @@
+/Users/kishon/Desktop/agrogeo_brasil_app/android/app/.cxx/Debug/m05x2636/x86/CMakeFiles/edit_cache.dir
+/Users/kishon/Desktop/agrogeo_brasil_app/android/app/.cxx/Debug/m05x2636/x86/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,760 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="br.com.agrogeo.agrogeo_brasil_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="35" />
+10
+11    <!-- Internet permissions -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:4:5-67
+12-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:5:5-79
+13-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:5:22-76
+14
+15    <!-- Storage permissions -->
+16    <uses-permission
+16-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:8:5-107
+17        android:name="android.permission.READ_EXTERNAL_STORAGE"
+17-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:8:22-77
+18        android:maxSdkVersion="32" />
+18-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:8:78-104
+19    <uses-permission
+19-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:9:5-108
+20        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+20-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:9:22-78
+21        android:maxSdkVersion="32" />
+21-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:9:79-105
+22    <!-- For Android 13+ (API level 33+) -->
+23    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+23-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:11:5-76
+23-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:11:22-73
+24    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+24-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:12:5-75
+24-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:12:22-72
+25    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+25-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:13:5-75
+25-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:13:22-72
+26
+27    <!-- For audio recording -->
+28    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+28-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:16:5-71
+28-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:16:22-68
+29    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+29-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:17:5-80
+29-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:17:22-77
+30
+31    <!-- For notifications -->
+32    <uses-permission android:name="android.permission.VIBRATE" />
+32-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:20:5-66
+32-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:20:22-63
+33    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+33-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:21:5-81
+33-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:21:22-78
+34    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+34-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:22:5-79
+34-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:22:22-76
+35    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+35-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:23:5-77
+35-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:23:22-74
+36
+37    <!-- Optional: Location permissions if your app uses geolocation -->
+38    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+38-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:27:5-79
+38-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:27:22-76
+39    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+39-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:28:5-81
+39-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:28:22-78
+40    <!--
+41         Required to query activities that can process text, see:
+42         https://developer.android.com/training/package-visibility and
+43         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+44
+45         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+46    -->
+47    <queries>
+47-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:75:5-80:15
+48        <intent>
+48-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:76:9-79:18
+49            <action android:name="android.intent.action.PROCESS_TEXT" />
+49-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:77:13-72
+49-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:77:21-70
+50
+51            <data android:mimeType="text/plain" />
+51-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:78:13-50
+51-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:78:19-48
+52        </intent>
+53        <intent>
+53-->[:file_picker] C:\agrogeo_brasil_app\build\file_picker\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-12:18
+54            <action android:name="android.intent.action.GET_CONTENT" />
+54-->[:file_picker] C:\agrogeo_brasil_app\build\file_picker\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-72
+54-->[:file_picker] C:\agrogeo_brasil_app\build\file_picker\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:21-69
+55
+56            <data android:mimeType="*/*" />
+56-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:78:13-50
+56-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:78:19-48
+57        </intent>
+58    </queries>
+59
+60    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+60-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-68
+60-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:22-65
+61    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+61-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:26:5-82
+61-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:26:22-79
+62    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+62-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\e82472bbda6bc9cb549ba44fd45dd608\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:5-98
+62-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\e82472bbda6bc9cb549ba44fd45dd608\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:22-95
+63
+64    <permission
+64-->[androidx.core:core:1.15.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\68e16af6c15662845d99d29588edd163\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+65        android:name="br.com.agrogeo.agrogeo_brasil_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+65-->[androidx.core:core:1.15.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\68e16af6c15662845d99d29588edd163\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+66        android:protectionLevel="signature" />
+66-->[androidx.core:core:1.15.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\68e16af6c15662845d99d29588edd163\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+67
+68    <uses-permission android:name="br.com.agrogeo.agrogeo_brasil_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+68-->[androidx.core:core:1.15.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\68e16af6c15662845d99d29588edd163\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+68-->[androidx.core:core:1.15.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\68e16af6c15662845d99d29588edd163\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+69
+70    <application
+71        android:name="android.app.Application"
+71-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:32:9-42
+72        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+72-->[androidx.core:core:1.15.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\68e16af6c15662845d99d29588edd163\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+73        android:extractNativeLibs="false"
+74        android:icon="@mipmap/ic_launcher"
+74-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:33:9-43
+75        android:label="AGROGEO BRASIL" >
+75-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:31:9-39
+76        <activity
+76-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:35:9-56:20
+77            android:name="br.com.agrogeo.agrogeo_brasil_app.MainActivity"
+77-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:36:13-41
+78            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+78-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:41:13-163
+79            android:exported="true"
+79-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:37:13-36
+80            android:hardwareAccelerated="true"
+80-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:42:13-47
+81            android:launchMode="singleTop"
+81-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:38:13-43
+82            android:taskAffinity=""
+82-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:39:13-36
+83            android:theme="@style/LaunchTheme"
+83-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:40:13-47
+84            android:windowSoftInputMode="adjustResize" >
+84-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:43:13-55
+85
+86            <!--
+87                 Specifies an Android theme to apply to this Activity as soon as
+88                 the Android process has started. This theme is visible to the user
+89                 while the Flutter UI initializes. After that, this theme continues
+90                 to determine the Window background behind the Flutter UI.
+91            -->
+92            <meta-data
+92-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:48:13-51:17
+93                android:name="io.flutter.embedding.android.NormalTheme"
+93-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:49:15-70
+94                android:resource="@style/NormalTheme" />
+94-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:50:15-52
+95
+96            <intent-filter>
+96-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:52:13-55:29
+97                <action android:name="android.intent.action.MAIN" />
+97-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:53:17-68
+97-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:53:25-66
+98
+99                <category android:name="android.intent.category.LAUNCHER" />
+99-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:54:17-76
+99-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:54:27-74
+100            </intent-filter>
+101        </activity>
+102
+103        <service
+103-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:58:9-64:19
+104            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
+104-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:59:13-97
+105            android:exported="false" >
+105-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:60:13-37
+106            <intent-filter>
+106-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:61:13-63:29
+107                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+107-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:62:17-78
+107-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:62:25-75
+108            </intent-filter>
+109        </service>
+110
+111        <meta-data
+111-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:66:9-68:33
+112            android:name="flutterEmbedding"
+112-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:67:13-44
+113            android:value="2" />
+113-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:68:13-30
+114
+115        <service
+115-->[:firebase_auth] C:\agrogeo_brasil_app\build\firebase_auth\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-12:19
+116            android:name="com.google.firebase.components.ComponentDiscoveryService"
+116-->[:firebase_auth] C:\agrogeo_brasil_app\build\firebase_auth\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:18-89
+117            android:directBootAware="true"
+117-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+118            android:exported="false" >
+118-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:68:13-37
+119            <meta-data
+119-->[:firebase_auth] C:\agrogeo_brasil_app\build\firebase_auth\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-11:85
+120                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+120-->[:firebase_auth] C:\agrogeo_brasil_app\build\firebase_auth\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:17-124
+121                android:value="com.google.firebase.components.ComponentRegistrar" />
+121-->[:firebase_auth] C:\agrogeo_brasil_app\build\firebase_auth\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:17-82
+122            <meta-data
+122-->[:cloud_firestore] C:\agrogeo_brasil_app\build\cloud_firestore\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-11:85
+123                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+123-->[:cloud_firestore] C:\agrogeo_brasil_app\build\cloud_firestore\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:17-134
+124                android:value="com.google.firebase.components.ComponentRegistrar" />
+124-->[:cloud_firestore] C:\agrogeo_brasil_app\build\cloud_firestore\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:17-82
+125            <meta-data
+125-->[:cloud_functions] C:\agrogeo_brasil_app\build\cloud_functions\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-11:85
+126                android:name="com.google.firebase.components:io.flutter.plugins.firebase.functions.FlutterFirebaseAppRegistrar"
+126-->[:cloud_functions] C:\agrogeo_brasil_app\build\cloud_functions\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:17-128
+127                android:value="com.google.firebase.components.ComponentRegistrar" />
+127-->[:cloud_functions] C:\agrogeo_brasil_app\build\cloud_functions\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:17-82
+128            <meta-data
+128-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:36:13-38:85
+129                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
+129-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:37:17-128
+130                android:value="com.google.firebase.components.ComponentRegistrar" />
+130-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:38:17-82
+131            <meta-data
+131-->[:firebase_storage] C:\agrogeo_brasil_app\build\firebase_storage\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-11:85
+132                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+132-->[:firebase_storage] C:\agrogeo_brasil_app\build\firebase_storage\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:17-126
+133                android:value="com.google.firebase.components.ComponentRegistrar" />
+133-->[:firebase_storage] C:\agrogeo_brasil_app\build\firebase_storage\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:17-82
+134            <meta-data
+134-->[:firebase_core] C:\agrogeo_brasil_app\build\firebase_core\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-11:85
+135                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+135-->[:firebase_core] C:\agrogeo_brasil_app\build\firebase_core\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:17-124
+136                android:value="com.google.firebase.components.ComponentRegistrar" />
+136-->[:firebase_core] C:\agrogeo_brasil_app\build\firebase_core\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:17-82
+137            <meta-data
+137-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:69:13-71:85
+138                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+138-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:70:17-109
+139                android:value="com.google.firebase.components.ComponentRegistrar" />
+139-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:71:17-82
+140            <meta-data
+140-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\11af5ecb2716772b902c92e68bb383b4\transformed\jetified-firebase-firestore-25.1.3\AndroidManifest.xml:17:13-19:85
+141                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+141-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\11af5ecb2716772b902c92e68bb383b4\transformed\jetified-firebase-firestore-25.1.3\AndroidManifest.xml:18:17-122
+142                android:value="com.google.firebase.components.ComponentRegistrar" />
+142-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\11af5ecb2716772b902c92e68bb383b4\transformed\jetified-firebase-firestore-25.1.3\AndroidManifest.xml:19:17-82
+143            <meta-data
+143-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\11af5ecb2716772b902c92e68bb383b4\transformed\jetified-firebase-firestore-25.1.3\AndroidManifest.xml:20:13-22:85
+144                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+144-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\11af5ecb2716772b902c92e68bb383b4\transformed\jetified-firebase-firestore-25.1.3\AndroidManifest.xml:21:17-111
+145                android:value="com.google.firebase.components.ComponentRegistrar" />
+145-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\11af5ecb2716772b902c92e68bb383b4\transformed\jetified-firebase-firestore-25.1.3\AndroidManifest.xml:22:17-82
+146            <meta-data
+146-->[com.google.firebase:firebase-functions:21.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cc86a178316ddabc0a4d530626bb1a40\transformed\jetified-firebase-functions-21.2.0\AndroidManifest.xml:15:13-17:85
+147                android:name="com.google.firebase.components:com.google.firebase.functions.FirebaseFunctionsKtxRegistrar"
+147-->[com.google.firebase:firebase-functions:21.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cc86a178316ddabc0a4d530626bb1a40\transformed\jetified-firebase-functions-21.2.0\AndroidManifest.xml:16:17-122
+148                android:value="com.google.firebase.components.ComponentRegistrar" />
+148-->[com.google.firebase:firebase-functions:21.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cc86a178316ddabc0a4d530626bb1a40\transformed\jetified-firebase-functions-21.2.0\AndroidManifest.xml:17:17-82
+149            <meta-data
+149-->[com.google.firebase:firebase-functions:21.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cc86a178316ddabc0a4d530626bb1a40\transformed\jetified-firebase-functions-21.2.0\AndroidManifest.xml:18:13-20:85
+150                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
+150-->[com.google.firebase:firebase-functions:21.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cc86a178316ddabc0a4d530626bb1a40\transformed\jetified-firebase-functions-21.2.0\AndroidManifest.xml:19:17-111
+151                android:value="com.google.firebase.components.ComponentRegistrar" />
+151-->[com.google.firebase:firebase-functions:21.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cc86a178316ddabc0a4d530626bb1a40\transformed\jetified-firebase-functions-21.2.0\AndroidManifest.xml:20:17-82
+152            <meta-data
+152-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:57:13-59:85
+153                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+153-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:58:17-122
+154                android:value="com.google.firebase.components.ComponentRegistrar" />
+154-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:59:17-82
+155            <meta-data
+155-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:60:13-62:85
+156                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+156-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:61:17-119
+157                android:value="com.google.firebase.components.ComponentRegistrar" />
+157-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:62:17-82
+158            <meta-data
+158-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc0251bee4c39b375e8059c88dce875a\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:30:13-32:85
+159                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
+159-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc0251bee4c39b375e8059c88dce875a\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:31:17-118
+160                android:value="com.google.firebase.components.ComponentRegistrar" />
+160-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc0251bee4c39b375e8059c88dce875a\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:32:17-82
+161            <meta-data
+161-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc0251bee4c39b375e8059c88dce875a\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:33:13-35:85
+162                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+162-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc0251bee4c39b375e8059c88dce875a\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:34:17-107
+163                android:value="com.google.firebase.components.ComponentRegistrar" />
+163-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc0251bee4c39b375e8059c88dce875a\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:35:17-82
+164            <meta-data
+164-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\737192d229988eeb9d678082fa979864\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:32:13-34:85
+165                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+165-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\737192d229988eeb9d678082fa979864\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:33:17-96
+166                android:value="com.google.firebase.components.ComponentRegistrar" />
+166-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\737192d229988eeb9d678082fa979864\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:34:17-82
+167            <meta-data
+167-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\ea8bba24211e5b27144f41434f352f7d\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
+168                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+168-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\ea8bba24211e5b27144f41434f352f7d\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
+169                android:value="com.google.firebase.components.ComponentRegistrar" />
+169-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\ea8bba24211e5b27144f41434f352f7d\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
+170            <meta-data
+170-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\ea8bba24211e5b27144f41434f352f7d\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
+171                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+171-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\ea8bba24211e5b27144f41434f352f7d\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
+172                android:value="com.google.firebase.components.ComponentRegistrar" />
+172-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\ea8bba24211e5b27144f41434f352f7d\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
+173            <meta-data
+173-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c2be43afa31afbc152257231c60eb30d\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:25:13-27:85
+174                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
+174-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c2be43afa31afbc152257231c60eb30d\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:26:17-120
+175                android:value="com.google.firebase.components.ComponentRegistrar" />
+175-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c2be43afa31afbc152257231c60eb30d\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:27:17-82
+176            <meta-data
+176-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c2be43afa31afbc152257231c60eb30d\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:28:13-30:85
+177                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+177-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c2be43afa31afbc152257231c60eb30d\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:29:17-117
+178                android:value="com.google.firebase.components.ComponentRegistrar" />
+178-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c2be43afa31afbc152257231c60eb30d\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:30:17-82
+179            <meta-data
+179-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\86c56102242d4d33b3606123644675d7\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+180                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+180-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\86c56102242d4d33b3606123644675d7\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+181                android:value="com.google.firebase.components.ComponentRegistrar" />
+181-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\86c56102242d4d33b3606123644675d7\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+182            <meta-data
+182-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+183                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+183-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+184                android:value="com.google.firebase.components.ComponentRegistrar" />
+184-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+185            <meta-data
+185-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\a638c3028851a77162da17351d5afde8\transformed\jetified-firebase-datatransport-18.2.0\AndroidManifest.xml:25:13-27:85
+186                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+186-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\a638c3028851a77162da17351d5afde8\transformed\jetified-firebase-datatransport-18.2.0\AndroidManifest.xml:26:17-115
+187                android:value="com.google.firebase.components.ComponentRegistrar" />
+187-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\a638c3028851a77162da17351d5afde8\transformed\jetified-firebase-datatransport-18.2.0\AndroidManifest.xml:27:17-82
+188        </service>
+189        <service
+189-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:9-17:72
+190            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
+190-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:13-107
+191            android:exported="false"
+191-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:13-37
+192            android:permission="android.permission.BIND_JOB_SERVICE" />
+192-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:17:13-69
+193
+194        <receiver
+194-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:26:9-33:20
+195            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
+195-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:27:13-98
+196            android:exported="true"
+196-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:28:13-36
+197            android:permission="com.google.android.c2dm.permission.SEND" >
+197-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:29:13-73
+198            <intent-filter>
+198-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:30:13-32:29
+199                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+199-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:31:17-81
+199-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:31:25-78
+200            </intent-filter>
+201        </receiver>
+202
+203        <provider
+203-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:41:9-45:38
+204            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
+204-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:42:13-102
+205            android:authorities="br.com.agrogeo.agrogeo_brasil_app.flutterfirebasemessaginginitprovider"
+205-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:43:13-88
+206            android:exported="false"
+206-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:44:13-37
+207            android:initOrder="99" />
+207-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:45:13-35
+208
+209        <activity
+209-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:29:9-46:20
+210            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+210-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:30:13-80
+211            android:excludeFromRecents="true"
+211-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:31:13-46
+212            android:exported="true"
+212-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:32:13-36
+213            android:launchMode="singleTask"
+213-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:33:13-44
+214            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+214-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:34:13-72
+215            <intent-filter>
+215-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:35:13-45:29
+216                <action android:name="android.intent.action.VIEW" />
+216-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:36:17-69
+216-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:36:25-66
+217
+218                <category android:name="android.intent.category.DEFAULT" />
+218-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:38:17-76
+218-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:38:27-73
+219                <category android:name="android.intent.category.BROWSABLE" />
+219-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:39:17-78
+219-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:39:27-75
+220
+221                <data
+221-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:78:13-50
+222                    android:host="firebase.auth"
+223                    android:path="/"
+224                    android:scheme="genericidp" />
+225            </intent-filter>
+226        </activity>
+227        <activity
+227-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:47:9-64:20
+228            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+228-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:48:13-79
+229            android:excludeFromRecents="true"
+229-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:49:13-46
+230            android:exported="true"
+230-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:50:13-36
+231            android:launchMode="singleTask"
+231-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:51:13-44
+232            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+232-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:52:13-72
+233            <intent-filter>
+233-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:53:13-63:29
+234                <action android:name="android.intent.action.VIEW" />
+234-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:36:17-69
+234-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:36:25-66
+235
+236                <category android:name="android.intent.category.DEFAULT" />
+236-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:38:17-76
+236-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:38:27-73
+237                <category android:name="android.intent.category.BROWSABLE" />
+237-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:39:17-78
+237-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4c69b5781c92ccba9647f4e6ea709788\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:39:27-75
+238
+239                <data
+239-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:78:13-50
+240                    android:host="firebase.auth"
+241                    android:path="/"
+242                    android:scheme="recaptcha" />
+243            </intent-filter>
+244        </activity>
+245
+246        <receiver
+246-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:29:9-40:20
+247            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+247-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:30:13-78
+248            android:exported="true"
+248-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:31:13-36
+249            android:permission="com.google.android.c2dm.permission.SEND" >
+249-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:32:13-73
+250            <intent-filter>
+250-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:30:13-32:29
+251                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+251-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:31:17-81
+251-->[:firebase_messaging] C:\agrogeo_brasil_app\build\firebase_messaging\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:31:25-78
+252            </intent-filter>
+253
+254            <meta-data
+254-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:37:13-39:40
+255                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+255-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:38:17-92
+256                android:value="true" />
+256-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:39:17-37
+257        </receiver>
+258        <!--
+259             FirebaseMessagingService performs security checks at runtime,
+260             but set to not exported to explicitly avoid allowing another app to call it.
+261        -->
+262        <service
+262-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:46:9-53:19
+263            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+263-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:47:13-82
+264            android:directBootAware="true"
+264-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:48:13-43
+265            android:exported="false" >
+265-->[com.google.firebase:firebase-messaging:24.1.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\85d0f55acdc07da829c816a6e79278aa\transformed\jetified-firebase-messaging-24.1.1\AndroidManifest.xml:49:13-37
+266            <intent-filter android:priority="-500" >
+266-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:61:13-63:29
+267                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+267-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:62:17-78
+267-->C:\agrogeo_brasil_app\android\app\src\main\AndroidManifest.xml:62:25-75
+268            </intent-filter>
+269        </service>
+270
+271        <provider
+271-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:9-17:20
+272            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+272-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-82
+273            android:authorities="br.com.agrogeo.agrogeo_brasil_app.flutter.image_provider"
+273-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-74
+274            android:exported="false"
+274-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:13-37
+275            android:grantUriPermissions="true" >
+275-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-47
+276            <meta-data
+276-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-16:75
+277                android:name="android.support.FILE_PROVIDER_PATHS"
+277-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:17-67
+278                android:resource="@xml/flutter_image_picker_file_paths" />
+278-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:17-72
+279        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+280        <service
+280-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:19:9-31:19
+281            android:name="com.google.android.gms.metadata.ModuleDependencies"
+281-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:20:13-78
+282            android:enabled="false"
+282-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:21:13-36
+283            android:exported="false" >
+283-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:22:13-37
+284            <intent-filter>
+284-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:24:13-26:29
+285                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+285-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:25:17-94
+285-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:25:25-91
+286            </intent-filter>
+287
+288            <meta-data
+288-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:28:13-30:36
+289                android:name="photopicker_activity:0:required"
+289-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:29:17-63
+290                android:value="" />
+290-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:30:17-33
+291        </service>
+292
+293        <activity
+293-->[:url_launcher_android] C:\agrogeo_brasil_app\build\url_launcher_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-11:74
+294            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+294-->[:url_launcher_android] C:\agrogeo_brasil_app\build\url_launcher_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-74
+295            android:exported="false"
+295-->[:url_launcher_android] C:\agrogeo_brasil_app\build\url_launcher_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-37
+296            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+296-->[:url_launcher_android] C:\agrogeo_brasil_app\build\url_launcher_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-71
+297
+298        <provider
+298-->[:open_filex] C:\agrogeo_brasil_app\build\open_filex\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:9-25:20
+299            android:name="com.crazecoder.openfile.FileProvider"
+299-->[:open_filex] C:\agrogeo_brasil_app\build\open_filex\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:17:13-64
+300            android:authorities="br.com.agrogeo.agrogeo_brasil_app.fileProvider.com.crazecoder.openfile"
+300-->[:open_filex] C:\agrogeo_brasil_app\build\open_filex\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:18:13-88
+301            android:exported="false"
+301-->[:open_filex] C:\agrogeo_brasil_app\build\open_filex\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:19:13-37
+302            android:grantUriPermissions="true" >
+302-->[:open_filex] C:\agrogeo_brasil_app\build\open_filex\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:20:13-47
+303            <meta-data
+303-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-16:75
+304                android:name="android.support.FILE_PROVIDER_PATHS"
+304-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:17-67
+305                android:resource="@xml/filepaths" />
+305-->[:image_picker_android] C:\agrogeo_brasil_app\build\image_picker_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:17-72
+306        </provider>
+307        <provider
+307-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+308            android:name="com.google.firebase.provider.FirebaseInitProvider"
+308-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+309            android:authorities="br.com.agrogeo.agrogeo_brasil_app.firebaseinitprovider"
+309-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+310            android:directBootAware="true"
+310-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+311            android:exported="false"
+311-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+312            android:initOrder="100" />
+312-->[com.google.firebase:firebase-common:21.0.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\4f9c14ceb4252ecea9b72e1c704cd308\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+313
+314        <service
+314-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
+315            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+315-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
+316            android:enabled="true"
+316-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
+317            android:exported="false" >
+317-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
+318            <meta-data
+318-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
+319                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+319-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
+320                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+320-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
+321        </service>
+322
+323        <activity
+323-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
+324            android:name="androidx.credentials.playservices.HiddenActivity"
+324-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
+325            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+325-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
+326            android:enabled="true"
+326-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
+327            android:exported="false"
+327-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
+328            android:fitsSystemWindows="true"
+328-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
+329            android:theme="@style/Theme.Hidden" >
+329-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\9131b542c9b788afe9dd12108ced2121\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
+330        </activity>
+331        <activity
+331-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+332            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+332-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+333            android:excludeFromRecents="true"
+333-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+334            android:exported="false"
+334-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+335            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+335-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+336        <!--
+337            Service handling Google Sign-In user revocation. For apps that do not integrate with
+338            Google Sign-In, this service will never be started.
+339        -->
+340        <service
+340-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+341            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+341-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+342            android:exported="true"
+342-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+343            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+343-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+344            android:visibleToInstantApps="true" />
+344-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\1f95ad54b00c2bfb9aac5a844cf00ad7\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+345
+346        <activity
+346-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\43ef07b17605336f1c4347bb8a396e51\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+347            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+347-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\43ef07b17605336f1c4347bb8a396e51\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+348            android:exported="false"
+348-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\43ef07b17605336f1c4347bb8a396e51\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+349            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+349-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\43ef07b17605336f1c4347bb8a396e51\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+350
+351        <provider
+351-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\2572c773145932f08e3b72fd0d530e61\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+352            android:name="androidx.startup.InitializationProvider"
+352-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\2572c773145932f08e3b72fd0d530e61\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+353            android:authorities="br.com.agrogeo.agrogeo_brasil_app.androidx-startup"
+353-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\2572c773145932f08e3b72fd0d530e61\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+354            android:exported="false" >
+354-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\2572c773145932f08e3b72fd0d530e61\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+355            <meta-data
+355-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\2572c773145932f08e3b72fd0d530e61\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+356                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+356-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\2572c773145932f08e3b72fd0d530e61\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+357                android:value="androidx.startup" />
+357-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\2572c773145932f08e3b72fd0d530e61\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+358            <meta-data
+358-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc3934e7b5992873779b6c0d978229f8\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+359                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+359-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc3934e7b5992873779b6c0d978229f8\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+360                android:value="androidx.startup" />
+360-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\dc3934e7b5992873779b6c0d978229f8\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+361            <meta-data
+361-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+362                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+362-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+363                android:value="androidx.startup" />
+363-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+364        </provider>
+365
+366        <uses-library
+366-->[androidx.window:window:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\aed2861b2b6894f7067df3f3f96b791f\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+367            android:name="androidx.window.extensions"
+367-->[androidx.window:window:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\aed2861b2b6894f7067df3f3f96b791f\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+368            android:required="false" />
+368-->[androidx.window:window:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\aed2861b2b6894f7067df3f3f96b791f\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+369        <uses-library
+369-->[androidx.window:window:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\aed2861b2b6894f7067df3f3f96b791f\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+370            android:name="androidx.window.sidecar"
+370-->[androidx.window:window:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\aed2861b2b6894f7067df3f3f96b791f\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+371            android:required="false" />
+371-->[androidx.window:window:1.2.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\aed2861b2b6894f7067df3f3f96b791f\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+372
+373        <meta-data
+373-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\daa46f0fdd16f05f69205eaa668178c9\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+374            android:name="com.google.android.gms.version"
+374-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\daa46f0fdd16f05f69205eaa668178c9\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+375            android:value="@integer/google_play_services_version" />
+375-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\daa46f0fdd16f05f69205eaa668178c9\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+376
+377        <receiver
+377-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+378            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+378-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+379            android:directBootAware="false"
+379-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+380            android:enabled="true"
+380-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+381            android:exported="true"
+381-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+382            android:permission="android.permission.DUMP" >
+382-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+383            <intent-filter>
+383-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+384                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+384-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+384-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+385            </intent-filter>
+386            <intent-filter>
+386-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+387                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+387-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+387-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+388            </intent-filter>
+389            <intent-filter>
+389-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+390                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+390-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+390-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+391            </intent-filter>
+392            <intent-filter>
+392-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+393                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+393-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+393-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\5aacd87baa6feaa7bece87b01e7698f0\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+394            </intent-filter>
+395        </receiver>
+396
+397        <service
+397-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c20fee8fa6177ca70bdf907ecbe9fc4d\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:28:9-34:19
+398            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+398-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c20fee8fa6177ca70bdf907ecbe9fc4d\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:29:13-103
+399            android:exported="false" >
+399-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c20fee8fa6177ca70bdf907ecbe9fc4d\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:30:13-37
+400            <meta-data
+400-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c20fee8fa6177ca70bdf907ecbe9fc4d\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:31:13-33:39
+401                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+401-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c20fee8fa6177ca70bdf907ecbe9fc4d\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:32:17-94
+402                android:value="cct" />
+402-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\c20fee8fa6177ca70bdf907ecbe9fc4d\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:33:17-36
+403        </service>
+404        <service
+404-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cfe698444f11ffc78f1c724f09590729\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:26:9-30:19
+405            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+405-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cfe698444f11ffc78f1c724f09590729\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:27:13-117
+406            android:exported="false"
+406-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cfe698444f11ffc78f1c724f09590729\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:28:13-37
+407            android:permission="android.permission.BIND_JOB_SERVICE" >
+407-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cfe698444f11ffc78f1c724f09590729\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:29:13-69
+408        </service>
+409
+410        <receiver
+410-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cfe698444f11ffc78f1c724f09590729\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:32:9-34:40
+411            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+411-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cfe698444f11ffc78f1c724f09590729\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:33:13-132
+412            android:exported="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+412-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\cfe698444f11ffc78f1c724f09590729\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:34:13-37
+413        <activity
+413-->[com.google.android.play:core-common:2.0.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\f5790a42b0bb15963f3a902f266087dd\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:14:9-18:65
+414            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+414-->[com.google.android.play:core-common:2.0.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\f5790a42b0bb15963f3a902f266087dd\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:15:13-93
+415            android:exported="false"
+415-->[com.google.android.play:core-common:2.0.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\f5790a42b0bb15963f3a902f266087dd\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:16:13-37
+416            android:stateNotNeeded="true"
+416-->[com.google.android.play:core-common:2.0.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\f5790a42b0bb15963f3a902f266087dd\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:17:13-42
+417            android:theme="@style/Theme.PlayCore.Transparent" />
+417-->[com.google.android.play:core-common:2.0.3] C:\Users\luis fernando corrêa\.gradle\caches\8.10.2\transforms\f5790a42b0bb15963f3a902f266087dd\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:18:13-62
+418    </application>
+419
+420</manifest>

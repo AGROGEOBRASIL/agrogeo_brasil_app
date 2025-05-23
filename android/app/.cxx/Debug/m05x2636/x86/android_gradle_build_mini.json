@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/kishon/fvm/versions/3.29.3/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/kishon/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/kishon/Desktop/agrogeo_brasil_app/android/app/.cxx/Debug/m05x2636/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/kishon/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/kishon/Desktop/agrogeo_brasil_app/android/app/.cxx/Debug/m05x2636/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
