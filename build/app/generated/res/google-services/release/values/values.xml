@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="gcm_defaultSenderId" translatable="false">213167893548</string>
-    <string name="google_api_key" translatable="false">AIzaSyDcw3K0YW8h9wRI7chfgdTczBRZ56T0q7M</string>
-    <string name="google_app_id" translatable="false">1:213167893548:android:6c4640b7bd613c4f85f589</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDcw3K0YW8h9wRI7chfgdTczBRZ56T0q7M</string>
-    <string name="google_storage_bucket" translatable="false">painel-agrogeo.firebasestorage.app</string>
-    <string name="project_id" translatable="false">painel-agrogeo</string>
-</resources>
