@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "213167893548",
+    "project_id": "painel-agrogeo",
+    "storage_bucket": "painel-agrogeo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213167893548:android:6c4640b7bd613c4f85f589",
+        "android_client_info": {
+          "package_name": "br.com.agrogeo.agrogeo_brasil_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcw3K0YW8h9wRI7chfgdTczBRZ56T0q7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213167893548:android:b5b239eed68adea285f589",
+        "android_client_info": {
+          "package_name": "br.com.agrogeo.brasil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcw3K0YW8h9wRI7chfgdTczBRZ56T0q7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213167893548:android:f399862176b22e8185f589",
+        "android_client_info": {
+          "package_name": "com.agrogeo.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcw3K0YW8h9wRI7chfgdTczBRZ56T0q7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

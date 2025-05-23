@@ -1,0 +1,444 @@
+import 'package:flutter/material.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:developer' as developer;
+import 'package:path_provider/path_provider.dart';
+import 'package:dio/dio.dart';
+import 'package:open_filex/open_filex.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'dart:io';
+import 'package:intl/intl.dart';
+
+class DocumentosEtapaPage extends StatefulWidget {
+  final String pasta;
+  const DocumentosEtapaPage({Key? key, required this.pasta}) : super(key: key);
+
+  @override
+  _DocumentosEtapaPageState createState() => _DocumentosEtapaPageState();
+}
+
+class _DocumentosEtapaPageState extends State<DocumentosEtapaPage> {
+  late Future<List<Reference>> _futureFiles;
+  bool _isLoading = false;
+  bool _isDownloading = false;
+  String _currentDownloadingFile = '';
+  double _downloadProgress = 0.0;
+  final Dio _dio = Dio();
+  
+  // Mapa para armazenar metadados dos arquivos
+  final Map<String, Map<String, dynamic>> _metadataCache = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _loadFiles();
+    developer.log('Carregando arquivos da pasta: ${widget.pasta}', 
+      name: 'DocumentosEtapaPage');
+  }
+
+  void _loadFiles() {
+    setState(() {
+      _isLoading = true;
+    });
+    
+    _futureFiles = FirebaseStorage.instance
+        .ref(widget.pasta)
+        .listAll()
+        .then((result) {
+          developer.log('Encontrados ${result.items.length} arquivos', 
+            name: 'DocumentosEtapaPage');
+          return result.items;
+        })
+        .catchError((error) {
+          developer.log('Erro ao listar arquivos: $error', 
+            name: 'DocumentosEtapaPage');
+          throw error;
+        })
+        .whenComplete(() {
+          if (mounted) {
+            setState(() {
+              _isLoading = false;
+            });
+          }
+        });
+  }
+
+  Future<Map<String, dynamic>> _getFileMetadata(Reference ref) async {
+    // Verifica se já temos os metadados em cache
+    if (_metadataCache.containsKey(ref.fullPath)) {
+      return _metadataCache[ref.fullPath]!;
+    }
+
+    try {
+      final metadata = await ref.getMetadata();
+      final url = await ref.getDownloadURL();
+      
+      final result = {
+        'size': metadata.size,
+        'contentType': metadata.contentType,
+        'timeCreated': metadata.timeCreated,
+        'updated': metadata.updated,
+        'url': url,
+      };
+      
+      // Armazena em cache
+      _metadataCache[ref.fullPath] = result;
+      
+      return result;
+    } catch (e) {
+      developer.log('Erro ao obter metadados: $e', name: 'DocumentosEtapaPage');
+      return {
+        'size': null,
+        'contentType': null,
+        'timeCreated': null,
+        'updated': null,
+        'url': null,
+      };
+    }
+  }
+
+  String _formatFileSize(int? bytes) {
+    if (bytes == null) return 'Tamanho desconhecido';
+    
+    const suffixes = ['B', 'KB', 'MB', 'GB', 'TB'];
+    var i = 0;
+    double size = bytes.toDouble();
+    
+    while (size >= 1024 && i < suffixes.length - 1) {
+      size /= 1024;
+      i++;
+    }
+    
+    return '${size.toStringAsFixed(1)} ${suffixes[i]}';
+  }
+
+  String _formatDateTime(DateTime? dateTime) {
+    if (dateTime == null) return 'Data desconhecida';
+    
+    final formatter = DateFormat('dd/MM/yyyy HH:mm');
+    return formatter.format(dateTime);
+  }
+
+  IconData _getIconForFileType(String fileName) {
+    final extension = fileName.split('.').last.toLowerCase();
+    
+    if (['pdf'].contains(extension)) {
+      return Icons.picture_as_pdf;
+    } else if (['doc', 'docx'].contains(extension)) {
+      return Icons.description;
+    } else if (['xls', 'xlsx', 'csv'].contains(extension)) {
+      return Icons.table_chart;
+    } else if (['ppt', 'pptx'].contains(extension)) {
+      return Icons.slideshow;
+    } else if (['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'].contains(extension)) {
+      return Icons.image;
+    } else if (['zip', 'rar', '7z', 'tar', 'gz'].contains(extension)) {
+      return Icons.archive;
+    } else if (['mp4', 'avi', 'mov', 'wmv'].contains(extension)) {
+      return Icons.video_file;
+    } else if (['mp3', 'wav', 'ogg', 'aac'].contains(extension)) {
+      return Icons.audio_file;
+    } else if (['txt', 'rtf', 'md'].contains(extension)) {
+      return Icons.text_snippet;
+    }
+    
+    return Icons.insert_drive_file;
+  }
+
+  Future<void> _visualizarArquivo(Reference ref, String url) async {
+    try {
+      final Uri uri = Uri.parse(url);
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Não foi possível abrir o arquivo: ${ref.name}')),
+          );
+        }
+      }
+    } catch (e) {
+      developer.log('Erro ao abrir URL: $e', name: 'DocumentosEtapaPage');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Erro ao abrir arquivo: $e')),
+        );
+      }
+    }
+  }
+
+  Future<void> _baixarArquivo(Reference ref, String url) async {
+    if (url.isEmpty) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('URL do arquivo inválida para download.')),
+        );
+      }
+      return;
+    }
+
+    setState(() {
+      _isDownloading = true;
+      _currentDownloadingFile = ref.name;
+      _downloadProgress = 0.0;
+    });
+
+    PermissionStatus status;
+    if (Platform.isIOS) {
+      status = await Permission.photos.request();
+    } else {
+      status = await Permission.storage.request();
+    }
+
+    if (status.isGranted) {
+      try {
+        Directory? dir;
+        if (Platform.isAndroid) {
+          dir = await getExternalStorageDirectory();
+        } else if (Platform.isIOS) {
+          dir = await getApplicationDocumentsDirectory();
+        }
+
+        if (dir == null) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Não foi possível obter o diretório de download.')),
+            );
+          }
+          setState(() {
+            _isDownloading = false;
+          });
+          return;
+        }
+
+        String savePath = "${dir.path}/${ref.name}";
+        developer.log('Caminho para salvar: $savePath', name: 'DocumentosEtapaPage');
+
+        await _dio.download(
+          url,
+          savePath,
+          onReceiveProgress: (received, total) {
+            if (total != -1) {
+              setState(() {
+                _downloadProgress = received / total;
+              });
+              developer.log(
+                "Progresso: ${(_downloadProgress * 100).toStringAsFixed(0)}%",
+                name: 'DocumentosEtapaPage',
+              );
+            }
+          },
+        );
+
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Download de "${ref.name}" concluído! Salvo em: ${dir.path}'),
+              action: SnackBarAction(
+                label: 'ABRIR',
+                onPressed: () {
+                  OpenFilex.open(savePath);
+                },
+              ),
+              duration: const Duration(seconds: 7),
+            ),
+          );
+        }
+      } catch (e) {
+        developer.log('Erro durante o download: $e', name: 'DocumentosEtapaPage');
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Erro no download: $e')),
+          );
+        }
+      } finally {
+        if (mounted) {
+          setState(() {
+            _isDownloading = false;
+            _downloadProgress = 0.0;
+          });
+        }
+      }
+    } else {
+      developer.log('Permissão de armazenamento negada.', name: 'DocumentosEtapaPage');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Permissão de armazenamento negada para realizar o download.')),
+        );
+      }
+      setState(() {
+        _isDownloading = false;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Documentos da Etapa'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: _isLoading ? null : () {
+              _loadFiles();
+            },
+            tooltip: 'Atualizar',
+          ),
+        ],
+      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : FutureBuilder<List<Reference>>(
+              future: _futureFiles,
+              builder: (ctx, snap) {
+                if (snap.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                
+                if (snap.hasError) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.error_outline, size: 48, color: Colors.red),
+                        const SizedBox(height: 16),
+                        Text('Erro: ${snap.error}', textAlign: TextAlign.center),
+                        const SizedBox(height: 16),
+                        ElevatedButton(
+                          onPressed: _loadFiles,
+                          child: const Text('Tentar novamente'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+                
+                final files = snap.data!;
+                
+                if (files.isEmpty) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.folder_open, size: 48, color: Colors.grey),
+                        const SizedBox(height: 16),
+                        const Text('Nenhum arquivo encontrado nesta etapa.'),
+                        const SizedBox(height: 8),
+                        Text('Pasta: ${widget.pasta}', 
+                          style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  );
+                }
+                
+                return Stack(
+                  children: [
+                    ListView.builder(
+                      itemCount: files.length,
+                      itemBuilder: (_, i) {
+                        final ref = files[i];
+                        
+                        // Pula arquivos de controle
+                        if (ref.name == '.keep' || ref.name == '.visivel') {
+                          return const SizedBox.shrink();
+                        }
+                        
+                        return FutureBuilder<Map<String, dynamic>>(
+                          future: _getFileMetadata(ref),
+                          builder: (context, metadataSnap) {
+                            final metadata = metadataSnap.data ?? {};
+                            final fileSize = metadata['size'] as int?;
+                            final lastModified = metadata['updated'] as DateTime?;
+                            final url = metadata['url'] as String?;
+                            
+                            return Card(
+                              margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                              child: ListTile(
+                                leading: Icon(
+                                  _getIconForFileType(ref.name),
+                                  size: 36,
+                                  color: Colors.blue[700],
+                                ),
+                                title: Text(
+                                  ref.name,
+                                  style: const TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                subtitle: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    if (fileSize != null)
+                                      Text('Tamanho: ${_formatFileSize(fileSize)}'),
+                                    if (lastModified != null)
+                                      Text('Modificado: ${_formatDateTime(lastModified)}'),
+                                  ],
+                                ),
+                                trailing: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    IconButton(
+                                      icon: const Icon(Icons.visibility, color: Colors.blue),
+                                      onPressed: url != null
+                                          ? () => _visualizarArquivo(ref, url)
+                                          : null,
+                                      tooltip: 'Visualizar',
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.file_download, color: Colors.green),
+                                      onPressed: (_isDownloading || url == null)
+                                          ? null
+                                          : () => _baixarArquivo(ref, url),
+                                      tooltip: 'Baixar',
+                                    ),
+                                  ],
+                                ),
+                                onTap: url != null
+                                    ? () => _visualizarArquivo(ref, url)
+                                    : null,
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    
+                    // Indicador de progresso de download
+                    if (_isDownloading)
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          color: Colors.black87,
+                          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                'Baixando $_currentDownloadingFile',
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                              const SizedBox(height: 8),
+                              LinearProgressIndicator(
+                                value: _downloadProgress,
+                                backgroundColor: Colors.grey[700],
+                                valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                '${(_downloadProgress * 100).toStringAsFixed(0)}%',
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                  ],
+                );
+              },
+            ),
+    );
+  }
+}

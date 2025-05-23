@@ -1,0 +1,2 @@
+C:/agrogeo_brasil_app/android/app/.cxx/RelWithDebInfo/5q325mth/x86_64/CMakeFiles/edit_cache.dir
+C:/agrogeo_brasil_app/android/app/.cxx/RelWithDebInfo/5q325mth/x86_64/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,46 @@
+name: agrogeo_brasil_app_main
+description: "App oficial da AGROGEO BRASIL"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.7.0 <4.0.0'
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Firebase (versões compatíveis entre si)
+  firebase_core: ^3.13.1
+  firebase_auth: ^5.5.4
+  firebase_messaging: ^15.2.6
+  cloud_firestore: ^5.6.8
+  firebase_storage: ^12.4.6
+  cloud_functions: ^5.5.1
+
+  # Utilitários
+  shared_preferences: ^2.5.3
+  mask_text_input_formatter: ^2.9.0
+  url_launcher: ^6.3.1
+  intl: ^0.20.2
+  path_provider: ^2.1.5
+  dio: ^5.8.0+1
+  open_filex: ^4.7.0
+  permission_handler: ^12.0.0+1
+  file_picker: ^10.1.9
+  image_picker: ^1.1.2
+
+  # Notificações locais
+  flutter_local_notifications: ^19.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.3
+
+flutter:
+  uses-material-design: true
